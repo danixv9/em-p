@@ -1,0 +1,89 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "vscode": "microsoft.azurecli",
+    "apt-packages": [
+      "git",
+      "curl",
+      "wget",
+      "build-essential",
+      "python3-pip",
+      "openjdk-11-jdk"
+    ],
+    "extensions": [
+      "ms-python.python",
+      "ms-azuretools.vscode-docker",
+      "ms-vscode.azure-account",
+      "ms-vscode.azurecli",
+      "ms-vscode.azureextensionpack",
+      "ms-vscode.csharp",
+      "ms-vscode.azurestorageexplorer",
+      "github.copilot"
+    ],
+    "postCreateCommand": "apt-get clean && rm -rf /var/lib/apt/lists/*",
+    "postStartCommand": "pip3 install --upgrade pip && pip3 install pylint",
+    "postAttachCommand": "az login",
+    "dockerComposeFile": [
+      "docker-compose.yml",
+      "docker-compose.dev.yml",
+      "docker-compose.prod.yml"
+    ],
+    "overrideCommand": {
+      "command": "npm run dev",
+      "include": [
+        "frontend",
+        "backend"
+      ]
+    },
+    "settings": {
+      "python.linting.enabled": true,
+      "python.linting.pylintEnabled": true,
+      "python.formatting.provider": "black",
+      "java.home": "/usr/lib/jvm/java-11-openjdk-amd64"
+    }
+  }
+}{
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {
+    "vscode": "microsoft.azurecli",
+    "apt-packages": [
+      "git",
+      "curl",
+      "wget",
+      "build-essential",
+      "python3-pip",
+      "openjdk-11-jdk"
+    ],
+    "extensions": [
+      "ms-python.python",
+      "ms-azuretools.vscode-docker",
+      "ms-vscode.azure-account",
+      "ms-vscode.azurecli",
+      "ms-vscode.azureextensionpack",
+      "ms-vscode.csharp",
+      "ms-vscode.azurestorageexplorer",
+      "github.copilot"
+    ],
+    "postCreateCommand": "apt-get clean && rm -rf /var/lib/apt/lists/*",
+    "postStartCommand": "pip3 install --upgrade pip && pip3 install pylint",
+    "postAttachCommand": "az login",
+    "dockerComposeFile": [
+      "docker-compose.yml",
+      "docker-compose.dev.yml",
+      "docker-compose.prod.yml"
+    ],
+    "overrideCommand": {
+      "command": "npm run dev",
+      "include": [
+        "frontend",
+        "backend"
+      ]
+    },
+    "settings": {
+      "python.linting.enabled": true,
+      "python.linting.pylintEnabled": true,
+      "python.formatting.provider": "black",
+      "java.home": "/usr/lib/jvm/java-11-openjdk-amd64"
+    }
+  }
+}
