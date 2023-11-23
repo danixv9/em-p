@@ -1,77 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Analyze HPI</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            background: #f0f0f0;
-            color: #333;
-        }
-        .container {
-            max-width: 800px;
-            margin: auto;
-            padding: 20px;
-        }
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            font-size: 36px;
-            font-weight: bold;
-            color: #333;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-        }
-        form {
-            display: flex;
-            flex-direction: column;
-        }
-        label {
-            margin-bottom: 5px;
-            font-size: 18px;
-            font-weight: bold;
-            color: #555;
-        }
-        textarea {
-            margin-bottom: 10px;
-            padding: 10px;
-            width: 100%;
-            border-radius: 5px;
-            border: 1px solid #ddd;
-            font-size: 16px;
-            resize: vertical;
-        }
-        button {
-            padding: 10px 20px;
-            background-color: #218838;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-            text-transform: uppercase;
-            transition: background-color 0.3s ease;
-        }
-        button:hover {
-            background-color: #1e7e34;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Analyze HPI</title>
+  <link
+    rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"
+  />
+  <style>
+    body {
+      font-family: "Arial", sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background: #f0f0f0;
+      color: #333;
+    }
+    .container {
+      max-width: 800px;
+      margin: auto;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      font-size: 36px;
+      font-weight: bold;
+      color: #333;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+    }
+    label {
+      margin-bottom: 5px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #555;
+    }
+    textarea {
+      margin-bottom: 10px;
+      padding: 10px;
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+      font-size: 16px;
+      resize: vertical;
+    }
+    button {
+      padding: 10px 20px;
+      background-color: #218838;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      text-transform: uppercase;
+      transition: background-color 0.3s ease;
+    }
+    button:hover {
+      background-color: #1e7e34;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Medical HPI Analysis</h1>
-        <form action="/analyze_hpi" method="post">
-            <label for="hpi">Enter Medical HPI:</label>
-            <textarea id="hpi" name="hpi" required></textarea>
-            <button type="submit">Analyze</button>
-        </form>
-    </div>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+  <div class="container">
+    <h1>Medical HPI Analysis</h1>
+    <form action="/analyze_hpi" method="post">
+      <label for="hpi">Enter Medical HPI:</label>
+      <textarea id="hpi" name="hpi" required></textarea>
+      <button type="submit">Analyze</button>
+    </form>
+  </div>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

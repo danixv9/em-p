@@ -59,22 +59,14 @@ def analyze_hpi():
     # Combine responses and summarize
     combined_responses = f"ANALYSIS:\n{gpt4_response.choices[0].text}\n\n{gpt35_response.choices[0].text}\n\n{assistant_response}"
 
-    summary_prompt = combined_responses + "\n\nRECOMMENDATION:\nBased on the analysis, the following recommendations are suggested:\n\n- Consider a psychiatric consultation to assess the need for medication management and specialized treatment.\n- Explore outpatient therapy options such as cognitive-behavioral therapy (CBT) or dialectical behavior therapy (DBT) for targeted interventions.\n- Collaborate with a multidisciplinary team, including psychologists and social workers, to provide comprehensive support.\n- Discuss the potential benefits of group therapy or support groups to enhance social connections and shared experiences.\n\nThese recommendations are provided based on the analysis, but it is essential to consider the individual's specific needs and preferences when deciding on the appropriate management approach."
+    summary_prompt = combined_responses + "\n\nRECOMMENDATION:\nBased on the analysis, the following recommendations are suggested:\n\n- Consider a psychiatric consultation to assess the need for medication management and specialized treatment.\n- Explore outpatient therapy options such as cognitive-behavioral therapy (CBT), particularly if symptoms of anxiety or depression are present."
 
-    summary_response = openai.Completion.create(model='gpt-3.5-turbo',
-                                                prompt=summary_prompt,
-                                                max_tokens=300,
-                                                n=1,
-                                                stop=None,
-                                                temperature=0.7)
-
-    summary = summary_response.choices[0].text.strip()
-
-    return render_template('results.html', summary=summary)
+    return render_template('results.html',
+                           analysis=combined_responses,
+                           recommendation=summary_prompt)
 
   except Exception as e:
-    error_message = f"An error occurred: {str(e)}"
-    return render_template('error.html', error_message=error_message)
+    return render_template('error.html', error_message=str(e))
 
 
 if __name__ == '__main__':
