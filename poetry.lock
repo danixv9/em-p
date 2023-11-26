@@ -30,6 +30,14 @@ python-versions = ">=3.7"
 frozenlist = ">=1.1.0"
 
 [[package]]
+name = "app"
+version = "0.0.1"
+description = "a simple egg"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "argon2-cffi"
 version = "21.3.0"
 description = "The secure Argon2 password hashing algorithm."
@@ -627,11 +635,12 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0,<3.11"
-content-hash = "e8a80749735cf46fbc57fc1e4d65e53e66d8f91df686bc76263e46e566e64d92"
+content-hash = "d8e3acd9eebe13a5732581417155800d52be63dc4a6f0455673bf42b9e590db7"
 
 [metadata.files]
 aiohttp = []
 aiosignal = []
+app = []
 argon2-cffi = []
 argon2-cffi-bindings = []
 async-timeout = []

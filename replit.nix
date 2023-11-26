@@ -1,5 +1,6 @@
 { pkgs }: {
   deps = [
+		pkgs.nodePackages.prettier
     pkgs.python39Packages.pytest
     pkgs.python39Packages.pytest_6
     pkgs.python310Full
