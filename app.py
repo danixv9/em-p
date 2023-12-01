@@ -38,16 +38,15 @@ def analyze_hpi():
     combined_responses = response.choices[0].message['content']
 
     # Create a summary using gpt-3.5-turbo-instruct through the legacy completions endpoint
-    summary_prompt = (
-    "Utilize the provided History of presenting illness (HPI) and accompanying AI-generated analysis "
-    "to create a structured summary. This summary should strictly adhere to DSM-5 criteria and patient-reported symptoms. "
-    "Organize the content into two distinct sections with bold headings: **Analysis** and **Recommendations**. "
-    "Under **Analysis**, succinctly synthesize the HPI information, highlighting key symptoms and their correlation "
-    "with DSM-5 diagnostic criteria. Under **Recommendations**, provide clear and actionable steps for psychiatric care, "
-    "including the consideration of consulting psychiatry or not, with specific reasons from DSM-5 criteria to support "
-    "the recommendation. The summary should be precise and encapsulate all critical insights from the HPI, "
-    "formatted to be immediately applicable in a clinical context. Maintain brevity while ensuring the summary "
-    "remains comprehensive and clinically relevant. 300 words maximum in total."f"\n\n{combined_responses}")
+    summary_prompt = f"""The provided prompt requests a structured summary based on the History of Presenting Illness (HPI) and an AI-generated analysis, aligning with DSM-5 criteria and patient-reported symptoms. The summary should be organized under two bold headings: Analysis and Recommendations.
+
+        Analysis: This section should succinctly synthesize the HPI, focusing on key symptoms and their alignment with DSM-5 diagnostic criteria. It should be concise yet thorough in highlighting the core aspects of the patient's presentation, ensuring a clear understanding of the clinical picture.
+
+        Recommendations: This part should offer clear, actionable steps for psychiatric care. It should discuss whether consulting with psychiatry is advisable, backed by specific DSM-5 criteria justifying the recommendation. The guidance provided should be direct and applicable, aiding in clinical decision-making.
+
+        The summary's objective is to encapsulate essential insights from the HPI in a format conducive to immediate clinical application. It should maintain brevity while being comprehensive and clinically pertinent, within a word limit of 300 words. Now use the prompt above to work on:
+
+        {combined_responses}. PLEASE FORMAT THE FINAL RESPONSE TO BE READABLE AND WELL PARAGRAPHED"""
 
     summary_response = openai.Completion.create(model='gpt-3.5-turbo-instruct',
                                                 prompt=summary_prompt,
@@ -55,7 +54,20 @@ def analyze_hpi():
 
     summary = summary_response.choices[0].text.strip()
 
-    return render_template('results.html', summary=summary)
+    system_message_for_response = f"Organize the summary response in the context of DSM-5 under the following bolded headings: Analysis and Recommendations, both separated by two lines: {summary}"
+
+    response_formatted = openai.ChatCompletion.create(
+      model="gpt-4",
+      messages=[{
+        "role": "system",
+        "content": system_message_for_response
+      }, {
+        "role": "user",
+        "content": hpi
+      }])
+
+    return render_template(
+      'results.html', summary=response_formatted.choices[0].message['content'])
 
   except Exception as e:
     # Handle unexpected exceptions

@@ -10,51 +10,81 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <style>
       body {
-        font-family: "Arial", sans-serif;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-        background: #f0f0f0;
-        color: #333;
+        background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        color: #4A4A4A;
       }
       .container {
-        max-width: 800px;
-        margin: auto;
+        max-width: 1000px;
+        margin: 50px auto;
         padding: 20px;
       }
       .card {
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 15px;
+        box-shadow: 0 4px 20px rgba(33, 33, 33, 0.2);
+        overflow: hidden;
+        transition: transform 0.3s ease-in-out;
+      }
+      .card:hover {
+        transform: translateY(-5px);
       }
       .card-header {
-        background-color: #fff;
-        padding: 20px;
-        font-size: 24px;
-        font-weight: bold;
-        color: #333;
+        background-color: #ffffff;
+        padding: 30px;
+        text-align: center;
+        border-bottom: 3px solid #00A7FF;
+        font-size: 28px;
+        font-weight: 600;
       }
       .card-body {
-        padding: 20px;
+        background: #ffffff;
+        padding: 40px;
+        text-align: justify;
+        font-size: 18px;
+        animation: animate__fadeIn 1s ease;
       }
       .back-button {
+        display: inline-block;
         text-decoration: none;
-        color: white;
-        background-color: #218838;
-        padding: 10px 15px;
-        border-radius: 5px;
-        transition: background-color 0.3s;
+        color: #FFFFFF;
+        background-color: #FF6E40;
+        padding: 15px 30px;
+        border-radius: 25px;
+        font-weight: bold;
+        transition: all 0.2s;
+        box-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        animation: animate__pulse 2s infinite;
       }
       .back-button:hover {
-        background-color: #1e7e34;
+        background-color: #FF3E1D;
+        box-shadow: 0 2px 25px rgba(0,0,0,0.2);
+      }
+      @keyframes fadeInUp {
+        from {
+          transform: translate3d(0, 40px, 0);
+          opacity: 0;
+        }
+
+        to {
+          transform: translate3d(0, 0, 0);
+          opacity: 1;
+        }
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="card mt-5">
-        <div class="card-header">Analysis Results</div>
+      <div class="card mt-5 animate__animated animate__fadeInUp">
+        <div class="card-header">Analysis</div>
         <div class="card-body">
           <p>{{ summary }}</p>
           <a href="/" class="back-button">Back to Home</a>
@@ -62,5 +92,6 @@
       </div>
     </div>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.js"></script>
   </body>
 </html>

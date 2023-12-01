@@ -1,3 +1,10 @@
+CURL /__replauthuser
+X-Replit-User-Id
+X-Replit-User-Name
+X-Replit-User-Teams
+X-Replit-User-Roles
+CURL /__replauthuser
+CURL /__replauthuser
 import os
 import requests
 from dotenv import load_dotenv

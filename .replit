@@ -89,3 +89,11 @@ pattern = "**/*.py"
 
 [languages.python3.languageServer]
 start = "pylsp"
+
+[deployment]
+deploymentTarget = "cloudrun"
+run = ["sh", "-c", "python app.py"]
+
+[auth]
+pageEnabled = false
+buttonEnabled = false

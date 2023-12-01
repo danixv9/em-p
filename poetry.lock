@@ -529,6 +529,14 @@ dev = ["pytest (>=7.0.1)", "pytest-timeout (>=2.1.0)", "build (>=0.7.0)", "pre-c
 doc = ["pytoolconfig", "sphinx (>=4.5.0)", "sphinx-autodoc-typehints (>=1.18.1)", "sphinx-rtd-theme (>=1.0.0)"]
 
 [[package]]
+name = "secure"
+version = "0.3.0"
+description = "A lightweight package that adds security headers for Python web frameworks."
+category = "main"
+optional = false
+python-versions = ">=3.6"
+
+[[package]]
 name = "toml"
 version = "0.10.2"
 description = "Python Library for Tom's Obvious, Minimal Language"
@@ -635,7 +643,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = ">=3.10.0,<3.11"
-content-hash = "d8e3acd9eebe13a5732581417155800d52be63dc4a6f0455673bf42b9e590db7"
+content-hash = "a07cf9704fbe479db4d6ffa0201894110cae53acb78f3a1da550cb82515ea84b"
 
 [metadata.files]
 aiohttp = []
@@ -680,6 +688,7 @@ replit = []
 replit-python-lsp-server = []
 requests = []
 rope = []
+secure = []
 toml = []
 tomli = []
 tqdm = []
