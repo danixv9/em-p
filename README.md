@@ -1,3 +1,5 @@
+Welcome to em-p, your open source EM-TRIAGE service!
+
 [ ] We may lack GPUs or TCUs, but we have logic, intelligence, and can wire as many LLMs as possible to equate xyz GPU/TPU - IF YOU AGREE WITH ME, THEN THIS IS YOUR SPACE!
 
 
