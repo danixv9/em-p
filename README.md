@@ -9,6 +9,6 @@ Welcome to em-p, your open source EM-TRIAGE service!
 - Think of the backend as YOU, a trauma ER surgeon performing life saving surgeries in the ER
 - These will only be possible if we traige efficiently such that the less acute issues can be fixed instantly and sent home without waiting unneccessarily for specialty consults or due to poor triage
 - With this open source, we will basically transform the shape of the ED worldwide!
-- I welcome ideas on how to ensure that this remains 100% OPEN SOURCE, not OPENAI opensource!
+- I welcome ideas on how to ensure that this remains 100% OPEN SOURCE.
 
 
